@@ -1,0 +1,21 @@
+.ic .li a {
+    cursor: pointer;
+}
+
+.routePicker {
+    padding: 30px 18px;
+}
+
+.dropdown>.dropdown-menu {
+    top: 200%;
+    transition: 0.3s all ease-in-out;
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+    top: 100%;
+}
+
+.dropdown>.dropdown-toggle:active {
+    pointer-events: none;
+}

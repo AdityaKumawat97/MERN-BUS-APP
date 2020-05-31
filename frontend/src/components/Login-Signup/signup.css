@@ -1,0 +1,257 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+}
+
+.form-container-in {
+    box-shadow: 0 0 40px 0 #000000;
+}
+
+.form-container-in {
+    position: absolute;
+    background-color: rgba(245, 245, 245, 0.486);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.9;
+}
+
+.log-container {
+    text-align: center;
+}
+
+.flex-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    /*centers items on the line (the x-axis by default)*/
+    align-items: center;
+}
+
+p.lead {
+    padding: 5px 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.row.full {
+    width: 80%;
+}
+
+.right-divider {
+    background: rgba(103, 58, 183, 0.7);
+    padding-top: 30px;
+}
+
+.left-divider {
+    border-left: solid 1px rgb(3, 4, 5);
+    width: 50%;
+    background: white;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+.lead-text {
+    text-align: center;
+    padding: 15px 10px;
+    font-weight: 300;
+    font-size: 1.8em;
+    line-height: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* social */
+
+#social-media {
+    position: relative;
+    top: 100px;
+    top: 25vh;
+    font-size: 1rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.btnn {
+    width: 100%;
+    clear: both;
+    white-space: nowrap;
+    font-size: .8em;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.35);
+    margin: 2px;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    overflow: hidden
+}
+
+.btnn:hover {
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.45);
+}
+
+.btnn:focus {
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+.btnn>span, .btnn-icon>i {
+    float: left;
+    padding: 13px;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    line-height: 1em
+}
+
+.btnn>span {
+    padding: 14px 18px 16px;
+    white-space: nowrap;
+    color: #FFF;
+    background: #b8b8b8
+}
+
+.btnn:hover>span {
+    color: #212121;
+    font-weight: 900;
+}
+
+.btnn:focus>span {
+    background: #9a9a9a
+}
+
+.btnn-icon>i {
+    border-radius: 5px 0 0 5px;
+    position: relative;
+    width: 20px;
+    text-align: center;
+    font-size: 1.25em;
+    color: #fff;
+    background: #212121
+}
+
+.btnn-icon>i:after {
+    content: "";
+    border: 8px solid;
+    border-color: transparent transparent transparent #222;
+    position: absolute;
+    top: 13px;
+    right: -15px
+}
+
+.btnn-icon:hover>i, .btnn-icon:focus>i {
+    color: #FFF;
+}
+
+.btnn-icon>span {
+    border-radius: 0 5px 5px 0
+}
+
+/*Facebook*/
+
+.icon-soc-fb {
+    display: block;
+    padding: 8px 100px;
+    background: #3B579D;
+    color: #fff;
+    margin-top: 20px;
+    margin-left: 25px;
+    font-size: 20px;
+    text-transform: capitalize;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #3B579D;
+    width: 80%;
+    transition: all .5s;
+}
+
+.icon-soc-fb:hover {
+    background: transparent;
+}
+
+.icon-soc-tw {
+    display: block;
+    padding: 8px 100px;
+    background: rgb(93, 153, 223);
+    color: #fff;
+    margin-top: 20px;
+    margin-left: 25px;
+    font-size: 20px;
+    text-transform: capitalize;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #3B579D;
+    width: 80%;
+    transition: all .5s;
+}
+
+.icon-soc-tw:hover {
+    background: transparent;
+}
+
+.media-container {
+    padding: 5px 20px;
+}
+
+input.form-submit {
+    padding: 5px 20px;
+    font-size: 1.3em;
+    font-weight: 300;
+    text-transform: capitalize;
+    margin-top: 30px;
+}
+
+.form-group2 {
+    width: 20em;
+    padding-left: 20px;
+}
+
+.rd {
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 2px;
+}
+
+.rd>input {
+    padding-left: 20px;
+}
+
+.mn-txt {
+    margin-bottom: 100px;
+    color: white;
+    font-size: 30px;
+}
+
+.link-text {
+    padding-bottom: 5px;
+    padding-left: 50%;
+}
+
+.signuptext {
+    color: green;
+    position: relative;
+    left: 100%;
+    top: -27px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.signuptext:hover {
+    color: rgb(71, 158, 71);
+}
+
+.sub-btn {
+    background: rgba(103, 58, 183);
+    border-color: rgba(103, 58, 183);
+}
+
+.sub-btn:hover {
+    background: #07315B;
+}
+
+.female-radio {
+    padding-left: 20px;
+}

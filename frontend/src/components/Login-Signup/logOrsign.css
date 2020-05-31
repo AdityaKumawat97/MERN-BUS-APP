@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+* {
+    margin: 0;
+    padding: 0
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+.myform-area {
+    overflow: hidden;
+    padding: 60px 0;
+    /* background-image: url('../../bg.jpg'); */
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.myform-area .form-area {
+    position: relative;
+    background: rgba(103, 58, 183, 0.7);
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    box-shadow: 0 0 40px 0 #0a0a0a;
+}
+
+.myform-area .form-area .form-content, .myform-area .form-area .form-input {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+
+.myform-area .form-area .form-content {
+    width: 50%;
+    padding: 40px 30px;
+}
+
+.myform-area .form-area .form-content h2 {
+    color: #fff;
+}
+
+.myform-area .form-area .form-content p {
+    color: #fff;
+}
+
+.myform-area .form-area .form-content ul {
+    margin-top: 50px;
+}
+
+.myform-area .form-area .form-content ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.myform-area .form-area .form-content a i {
+    margin-right: 10px;
+}
+
+.myform-area .form-area .form-content .facebook {
+    display: block;
+    position: relative;
+    top: -39px;
+    padding: 8px 140px;
+    background: #3B579D;
+    color: #fff;
+    font-size: 15px;
+    text-transform: capitalize;
+    border-radius: 4px;
+    border: 1px solid #3B579D;
+    transition: all .5s;
+}
+
+.myform-area .form-area .form-content .facebook:hover, .myform-area .form-area .form-content .facebook:focus {
+    background: transparent;
+}
+
+.myform-area .form-area .form-content .twitter {
+    display: block;
+    position: relative;
+    top: -48px;
+    padding: 8px 140px;
+    background: #00ACED;
+    color: #fff;
+    font-size: 15px;
+    text-transform: capitalize;
+    border-radius: 4px;
+    border: 1px solid #00ACED;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.myform-area .form-area .form-content .twitter:hover, .myform-area .form-area .form-content .twitter:focus {
+    background: transparent;
+}
+
+.myform-area .form-area .form-input {
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 40px 0 #e1e1e1;
+}
+
+.myform-area .form-area .form-input {
+    width: 50%;
+    background: #fff;
+    padding: 40px 30px;
+}
+
+.myform-area .form-area .form-input h2 {
+    margin-bottom: 20px;
+    color: #07315B;
+}
+
+.myform-area .form-area .form-input input {
+    position: relative;
+    height: 60px;
+    padding: 20px 0;
+}
+
+.myform-area .form-area .form-input textarea {
+    height: 120px;
+    padding: 20px 0;
+}
+
+.myform-area .form-area .form-input input, .myform-area .form-area .form-input textarea {
+    text-transform: capitalize;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #e1e1e1;
+    color: #07315B;
+}
+
+.myform-area .form-area .form-input form .form-group {
+    position: relative;
+}
+
+.myform-area .form-area .form-input form .form-group label {
+    position: absolute;
+    text-transform: capitalize;
+    top: 20px;
+    left: 0;
+    pointer-events: none;
+    font-size: 14px;
+    color: #595959;
+    margin-bottom: 0;
+    transition: all .6s;
+}
+
+.myform-area .form-area .form-input input:focus~label, .myform-area .form-area .form-input textarea:focus~label, .myform-area .form-area .form-input input:valid~label, .myform-area .form-area .form-input textarea:valid~label {
+    top: -5px;
+    opacity: 0;
+    left: 0;
+    color: rgba(103, 58, 183);
+    font-size: 12px;
+    color: #07315B;
+    font-weight: bold;
+}
+
+.myform-area .form-area .form-input input:focus, .myform-area .form-area .form-input textarea:focus, .myform-area .form-area .form-input input:valid, .myform-area .form-area .form-input textarea:valid {
+    border-bottom: 2px solid rgba(103, 58, 183);
+}
+
+.myform-area .form-area .form-text {
+    margin-top: 30px;
+}
+
+.myform-area .form-area .form-text span a {
+    color: rgba(103, 58, 183);
+}
+
+.myform-area .form-area .myform-button {
+    margin-top: 30px;
+}
+
+.myform-area .form-area .myform-button .myform-btn {
+    width: 100%;
+    height: 50px;
+    font-size: 17px;
+    background: rgba(103, 58, 183);
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.myform-area .form-area .myform-button .myform-btn:hover {
+    background: #07315B;
+}
+
+.signup-text {
+    padding-bottom: 5px;
+    padding-left: 20%;
+}
+.signUPtext {
+    color: green;
+    position: relative;
+    left: 50%;
+    top: -27px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.signUPtext:hover {
+    color: rgb(71, 158, 71);
+}
