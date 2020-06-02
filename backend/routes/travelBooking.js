@@ -20,6 +20,16 @@ router.post('/', (req, res) => {
     })
 })
 
+router.post('/', (req, res) => {
+
+    bus.findOne({ _id: req.body.bId }, (err, bus) => {
+        if (err) {
+            res.json({ status: false, message: "error while searching with ID" })
+        }
+        else
+            res.json({ bus })
+    })
+})
 
 // router.post('/', (req, res) => {
 //     let newBus = new bus(req.body)

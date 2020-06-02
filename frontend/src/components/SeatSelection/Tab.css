@@ -7,14 +7,14 @@ html {
 }
 
 .plane {
-    margin: 20px 5px;
+    margin: 50px 0px;
     max-width: 300px;
     background-color: rgba(255, 255, 255, 0.534);
+    border-radius:5px;
 }
 
 .fuselage {
     border: 1px solid #d8d8d8;
-    border-radius: 5px;
 }
 
 ol {
@@ -178,12 +178,14 @@ ol {
 
 .column1 {
     float: left;
-    width: 30%;
+    width: 40%;
 }
 
 .column2 {
     float: left;
-    width: 70%;
+    width: 55%;
+    padding: 0;
+    margin: 0;
 }
 
 /* Clear floats after the columns */
@@ -192,4 +194,42 @@ ol {
     content: "";
     display: table;
     clear: both;
+}
+
+.ss {
+    /* width: auto; */
+    width: 100%;
+    border: 1px solid #00acee;
+    background-color: #00abeeb0;
+}
+
+.seatInfo {
+    /* position: relative;  */
+    left:-50px;
+    margin-top:49px;
+    border: 1px solid white;
+    height: auto;
+    border-radius: 5px;
+}
+
+.seatfrm{
+    border:1px solid white;
+}
+.seatInp{
+    margin-right:-8px;
+    width:50%;
+}
+
+.form-check{
+    margin-left: 32px;
+    margin-top:5px;
+}
+
+.seatBT{
+    display:block;
+    margin-left:36%;
+}
+
+.hideBT{
+    display:none;
 }

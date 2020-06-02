@@ -1,6 +1,49 @@
-.payment{
-    height:auto;
-    width:auto;
-    border: 1px solid #00acee ;
-    background-color: #00abeeb0 ;
+.paym {
+    /* border:1px solid white; */
+    height: auto;
+    background-color: #00abeeb0;
+}
+
+.App-payment {
+    padding: 10px 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.credit-form {
+    margin: 30px auto 0;
+    max-width: 400px;
+}
+
+.actionButton {
+    margin-top: 15px;
+}
+
+.frm-ctrl {
+    border-radius: 5px;
+    width: 80%;
+    height: 38px;
+    padding: 0px 5px;
+}
+
+.cl1 {
+    float: left;
+    width: 60%;
+}
+
+.columnTwo {
+    float: right;
+    width: 50%;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    /* border-left: 1px solid black; */
+}
+
+.btCustom {
+    width: 50%;
+}
+
+.pPayment {
+    text-transform: uppercase;
 }

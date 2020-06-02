@@ -20,7 +20,7 @@ a, a:hover {
 .myform-area .form-area {
     position: relative;
     background: rgba(103, 58, 183, 0.7);
-    width: 100%;
+    width: 700px;
     height: 400px;
     overflow: hidden;
     box-shadow: 0 0 40px 0 #0a0a0a;
@@ -200,7 +200,7 @@ a, a:hover {
 
 .signup-text {
     padding-bottom: 5px;
-    padding-left: 20%;
+    padding-left: 18%;
 }
 .signUPtext {
     color: green;
@@ -213,4 +213,8 @@ a, a:hover {
 
 .signUPtext:hover {
     color: rgb(71, 158, 71);
+}
+
+.loginInfo{
+    margin-left:5px;
 }

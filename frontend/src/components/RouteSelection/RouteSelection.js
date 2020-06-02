@@ -2,8 +2,8 @@ import React from 'react'
 import RouteSelector from '../routeSelector/Routeselector'
 import SeatSelection from '../SeatSelection/SeatSelection'
 import PaymentTab from '../PaymentTab/PaymentTab'
+import TicketPage from '../TicketPage/TicketPage'
 export default function RouteSelection({ history }) {
-
     const handleUserIcon = e => {
         e.preventDefault()
         history.push('/profile')
@@ -40,13 +40,13 @@ export default function RouteSelection({ history }) {
             <div>
                 <ul className="nav nav-pills">
                     <li className="nav-item">
-                        <a className="nav-link active" data-toggle="pill" href="#home">Home</a>
+                        <a className="nav-link active" data-toggle="pill" href="#home">Select Bus</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link " data-toggle="pill" href="#menu1">Menu 1</a>
+                        <a className="nav-link " data-toggle="pill" href="#menu1">Select Seat</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" data-toggle="pill" href="#menu2">Menu 2</a>
+                        <a className="nav-link" data-toggle="pill" href="#menu2">Payment</a>
                     </li>
                 </ul>
 
