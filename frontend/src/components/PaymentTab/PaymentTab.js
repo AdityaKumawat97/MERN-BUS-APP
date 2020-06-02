@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "react-credit-cards";
 import './PaymentTab.css'
+import jwt_decode from 'jwt-decode'
 import {
     formatCreditCardNumber,
     formatCVC,
@@ -18,8 +19,14 @@ export default class App extends React.Component {
         cvc: "",
         issuer: "",
         focused: "",
-        formData: null
-    };
+        formData: null,
+        token: ""
+    }
+    componentDidMount() {
+        const tok = sessionStorage.getItem("authToken")
+        const decoded = jwt_decode(tok)
+        this.setState({ token: decoded.user })
+    }
 
     handleCallback = ({ issuer }, isValid) => {
         if (isValid) {
@@ -58,9 +65,33 @@ export default class App extends React.Component {
         this.setState({ formData });
         this.form.reset();
     };
-
+    test = () => {
+        console.log(this.state.token)
+    }
+    renderNamesOfPassenger = () => {
+        let passArray = localStorage.getItem('nameData')
+        if (passArray) {
+            let nameArray = JSON.parse(passArray)
+            return nameArray.map((name, idx) => {
+                return (
+                    <p key={idx}>{name}</p>
+                )
+            })
+        }
+    }
+    renderSeatNumbers = () => {
+        let seatArray = localStorage.getItem('reservedSeats')
+        if (seatArray) {
+            let seaArr = JSON.parse(seatArray)
+            return seaArr.map((seat, idx) => {
+                return (
+                    <p key={idx}>{seat}</p>
+                )
+            })
+        }
+    }
     render() {
-        const { name, number, expiry, cvc, focused, issuer, formData } = this.state;
+        const { name, number, expiry, cvc, focused, issuer, formData, token } = this.state;
 
         return (
 
@@ -73,7 +104,7 @@ export default class App extends React.Component {
                                 number={number}
                                 name={name}
                                 expiry={expiry}
-                                cvc={cvc}   
+                                cvc={cvc}
                                 focused={focused}
                                 callback={this.handleCallback}
                             />
@@ -117,7 +148,7 @@ export default class App extends React.Component {
                                     <input
                                         type="tel"
                                         name="cvc"
-                                        className="frm-ctrl"
+                                        className="frm-ctrl cvc"
                                         placeholder="CVC"
                                         pattern="\d{3,4}"
                                         required
@@ -127,7 +158,7 @@ export default class App extends React.Component {
                                 </div>
                                 <input type="hidden" name="issuer" value={issuer} />
                                 <div className="actionButton">
-                                    <button className="btn btn-light btCustom">PAY</button>
+                                    <button onClick={this.test()} className="btn btn-light btCustom">PAY</button>
                                 </div>
                             </form>
                             {formData && (
@@ -137,18 +168,24 @@ export default class App extends React.Component {
                                     ))}
                                 </div>
                             )}
-                            <hr style={{ margin: "60px 0 30px" }} />
                         </div>
                     </div>
                     <div className="columnTwo">
-                        <h1>TION</h1>
+                        <h3>Unique Travels</h3>
                         <div>
                             <p>BOOKING DETAILS</p>
-                            <div>
-                                <p>Username: ADitya</p>
-                                <p>booked seats: 1a,1b,1c</p>
-                                <hr/>
-                                <p>total amount</p>
+                            <div className="row">
+                                <div className="col-6 pt">
+                                    <p>Username</p>
+                                    <p className="hdng">Passengers</p>
+                                    {this.renderNamesOfPassenger()}
+                                </div>
+                                <div className="col-6">
+                                    <p className="usrName">{token.name}</p>
+                                    <p className="hdng">Seat No</p>
+                                    {this.renderSeatNumbers()}
+                                </div>
+                                <hr />
                             </div>
                         </div>
                     </div>

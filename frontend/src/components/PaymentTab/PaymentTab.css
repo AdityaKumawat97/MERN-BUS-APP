@@ -5,14 +5,18 @@
 }
 
 .App-payment {
-    padding: 10px 10px;
+    padding: 10px 30px;
     text-align: center;
     margin-top: 20px;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.603);
+    border-radius: 5px;
 }
 
 .credit-form {
-    margin: 30px auto 0;
+    margin-top: 31px;
     max-width: 400px;
+    margin-right: 19px;
 }
 
 .actionButton {
@@ -24,6 +28,7 @@
     width: 80%;
     height: 38px;
     padding: 0px 5px;
+    text-align: center;
 }
 
 .cl1 {
@@ -33,17 +38,42 @@
 
 .columnTwo {
     float: right;
-    width: 50%;
+    width: 54%;
     padding: 10px;
     margin: 0;
     text-align: center;
-    /* border-left: 1px solid black; */
+    margin-left: 43px;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.603);
+    height: fit-content;
+    margin-top: 20px;
+    border-radius: 5px;
 }
 
 .btCustom {
-    width: 50%;
+    width: 62%;
+    margin-left: 17px;
 }
 
 .pPayment {
     text-transform: uppercase;
+    font-weight: 900;
+    font-size: larger;
+}
+
+.cvc {
+    width: 57px;
+    margin-left: 27px;
+    text-align: center;
+}
+
+.pt{
+    padding-left:0;
+}
+.usrName{
+    text-transform: capitalize;
+}
+
+.hdng{
+    font-weight: bold;
 }

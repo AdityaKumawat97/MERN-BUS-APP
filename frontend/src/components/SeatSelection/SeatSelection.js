@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import { FaAngleDoubleDown } from "react-icons/fa";
 import './Tab.css'
 export default function SeatSelection() {
-    const [name, setName] = useState('')
+    const [name, setName] = useState([])
+    const [arrowDown, setArrowDown] = useState(false)
+    const [gender, setGender] = useState([])
     const [reservedSeat, setReservedSeat] = useState(["1A", "2A", "2B", "3B", "4A", "5C", "6A", "7B", "7C", '8B', "9B", "9C"])
     const [seatNumber, setSeatnumber] = useState([])
-    const [passengers, setPassengers] = useState([{
-        Name: "",
-        Gender: ""
-    }])
+    const [passengers, setPassengers] = useState([])
     // useEffect(()=>{
     //     let bId = localStorage.getItem('selectedBusId')
     //     if(bId){
@@ -39,39 +38,44 @@ export default function SeatSelection() {
             console.log(seatNumber)
         }
     }
-    const handleGender = e => {
+    const handleGender = (e, seatNo) => {
         const { value } = e.target
-        console.log(value)
-        setPassengers(prevState => ({ ...prevState, Gender: value }))
+        setGender(gender.concat(value))
+        // console.log(value)
+        // setPassengers(prevState => ({ ...prevState, SeatNo: seatNo, Gender: value }))
     }
-    const handlePassengerName = e => {
+    const handlePassengerName = (e, seatNo) => {
         e.preventDefault()
         let value = e.target.value
-        console.log(value)
+        // console.log(value)
         if (!value) {
             return (setName("name is required"))
         } else {
-            setPassengers(prevState => ({ ...prevState, Name: value }))
+            setName(name.concat(value))
+            // setPassengers(prevState => ({ ...prevState, SeatNo: seatNo, Name: value }))
         }
     }
     const handleSubmitDetails = e => {
         e.preventDefault()
+        setArrowDown(true)
         localStorage.setItem("reservedSeats", JSON.stringify(seatNumber))
-        console.log(passengers)
+        localStorage.setItem("nameData", JSON.stringify(name))
+        console.log(name)
+        console.log(gender)
     }
 
     const renderPassengerData = (seatArray) => {
-        return seatArray.map((seat) => {
+        return seatArray.map((seat, idx) => {
             return (
-                <form className="form seatfrm">
+                <form key={idx} className="form seatfrm">
                     <p class="text-capitalize text-center">Seat No:{seat}</p>
-                    <input className="form-control seatInp" onBlur={e => handlePassengerName(e)} type="text" name="passenger-name" placeholder="Enter Name" />
+                    <input className="form-control seatInp" onBlur={e => handlePassengerName(e, seat)} type="text" name="passenger-name" placeholder="Enter Name" />
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" id="male" value="Male" onClick={e => handleGender(e)} />
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="Male" onClick={e => handleGender(e, seat)} />
                         <label class="form-check-label" for="male">Male</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" id="female" value="Female" onClick={e => handleGender(e)} />
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="Female" onClick={e => handleGender(e, seat)} />
                         <label class="form-check-label" htmlFor="female">Female</label>
                     </div>
                 </form>)
@@ -266,6 +270,9 @@ export default function SeatSelection() {
                             <button onClick={e => handleSubmitDetails(e)} className="btn btn-info seatBT">
                                 Confirm Details
                             </button>
+                        </div>
+                        <div className={arrowDown ? "activeArrow2" : "nonActive"}>
+                            <FaAngleDoubleDown />
                         </div>
                     </div>
                 </div>

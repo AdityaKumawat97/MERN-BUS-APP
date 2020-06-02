@@ -11,6 +11,8 @@ export default function RouteSelection({ history }) {
     const handleSignOut = e => {
         e.preventDefault()
         sessionStorage.removeItem('authToken')
+        localStorage.removeItem('reservedSeats')
+        localStorage.removeItem('nameData')
         history.push('/')
     }
     const handleLogoClick = e => {

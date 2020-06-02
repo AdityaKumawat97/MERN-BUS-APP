@@ -6,10 +6,6 @@ export default function BusList({ value: dataInp }) {
     const [reset, Setreset] = useState(false)
     const [arrowDown, setArrowDown] = useState(false)
     const [clas, SetClas] = useState(true)
-    // useEffect(() => {
-    //     const [bus] = dataInp
-    //     setObj(bus)
-    // }, [dataInp])
     useEffect(() => {
         setObj(dataInp)
     }, [dataInp])
@@ -24,6 +20,7 @@ export default function BusList({ value: dataInp }) {
             SetClas(true)
             setArrowDown(false)
         }
+        localStorage.removeItem("selectedBusId")
     }
     const renderFunction = () => {
         // console.log(dataInp[0].companyName)

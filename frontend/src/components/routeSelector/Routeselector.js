@@ -9,8 +9,7 @@ export default function Routeselector() {
     const handleToCity = e => {
         e.preventDefault()
         setDestination({ destination: e.target.value })
-
-
+        localStorage.setItem("destination", e.target.value)
     }
     const renderBusList = (dataInp) => {
         if (Object.keys(dataInp).length > 0) {
@@ -20,6 +19,7 @@ export default function Routeselector() {
     const handleFromCity = e => {
         e.preventDefault()
         setStartCity({ startCity: e.target.value })
+        localStorage.setItem("start", e.target.value)
         // console.log(startCity)
     }
 
@@ -31,6 +31,11 @@ export default function Routeselector() {
             .then(data => {
                 setData(data.bus)
             })
+    }
+    const handleDate = e => {
+        e.preventDefault()
+        //    console.log(e.target.value)
+        localStorage.setItem("date", e.target.value)
     }
     return (
         <div className="rdc">
@@ -50,7 +55,7 @@ export default function Routeselector() {
                         <option>Bangalore</option>
                         <option>Chenai</option>
                     </select>
-                    <input type="date"></input>
+                    <input onChange={e => { handleDate(e) }} type="date"></input>
                     <input type="submit" className=" btn btn-primary btn-md getRoute" />
                 </form>
 

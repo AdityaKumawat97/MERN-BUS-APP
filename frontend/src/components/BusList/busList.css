@@ -14,8 +14,8 @@
 .activeArrow {
     color: rgb(0, 63, 0);
     position: absolute;
-    margin-top:50px;
-    left: 230px;
+    margin-top: 50px;
+    left: 270px;
     animation: bounce 0.5s infinite linear;
 }
 
@@ -92,4 +92,8 @@
     100% {
         top: 0;
     }
+}
+
+.nonActive {
+    display: none;
 }
