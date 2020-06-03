@@ -11,7 +11,7 @@ import {
 
 import "react-credit-cards/es/styles-compiled.css";
 
-export default class App extends React.Component() {
+export default class App extends React.Component {
     state = {
         number: "",
         name: "",
@@ -19,7 +19,7 @@ export default class App extends React.Component() {
         cvc: "",
         issuer: "",
         focused: "",
-        formData: null,
+        formData: "",
         token: "",
     }
     componentDidMount() {
@@ -64,9 +64,11 @@ export default class App extends React.Component() {
 
         this.setState({ formData });
         this.form.reset();
-    }; 
-    test = () => {
-        
+    };
+    test = (e) => {
+        e.preventDefault()
+        localStorage.setItem("paymentData", JSON.stringify(this.state.token))
+        window.location.href = "/getTicket"
     }
     renderNamesOfPassenger = () => {
         let passArray = localStorage.getItem('nameData')
@@ -177,7 +179,7 @@ export default class App extends React.Component() {
                                 </div>
                                 <input type="hidden" name="issuer" value={issuer} />
                                 <div className="">
-                                    <button onClick={this.test()} className="btn btn-light btCustom">PAY</button>
+                                    <button onClick={e => this.test(e)} className="btn btn-light btCustom">PAY</button>
                                 </div>
                             </form>
                             {/* {formData && (
