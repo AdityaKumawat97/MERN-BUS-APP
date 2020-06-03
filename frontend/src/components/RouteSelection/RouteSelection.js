@@ -13,6 +13,7 @@ export default function RouteSelection({ history }) {
         sessionStorage.removeItem('authToken')
         localStorage.removeItem('reservedSeats')
         localStorage.removeItem('nameData')
+        localStorage.clear()
         history.push('/')
     }
     const handleLogoClick = e => {

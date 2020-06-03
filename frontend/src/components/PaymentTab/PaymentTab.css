@@ -11,6 +11,8 @@
     border: 1px solid white;
     background-color: rgba(255, 255, 255, 0.603);
     border-radius: 5px;
+    margin-bottom:20px;
+    padding-bottom:30px;
 }
 
 .credit-form {
@@ -48,6 +50,7 @@
     height: fit-content;
     margin-top: 20px;
     border-radius: 5px;
+    margin-bottom:20px;
 }
 
 .btCustom {
@@ -76,4 +79,24 @@
 
 .hdng{
     font-weight: bold;
+}
+
+.hr1{
+    background-color: black;
+    width:38%;
+    position:absolute;
+    left:51%;
+    top:37%;
+    
+}
+.hr2{
+    background-color: black;
+    width:38%;
+    position:absolute;
+    left:51%;
+    top:55%;
+}
+
+.hr3{
+    background-color: rgba(94, 91, 91, 0.685);
 }

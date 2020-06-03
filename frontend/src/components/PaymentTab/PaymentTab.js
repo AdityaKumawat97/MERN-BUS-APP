@@ -11,7 +11,7 @@ import {
 
 import "react-credit-cards/es/styles-compiled.css";
 
-export default class App extends React.Component {
+export default class App extends React.Component() {
     state = {
         number: "",
         name: "",
@@ -20,7 +20,7 @@ export default class App extends React.Component {
         issuer: "",
         focused: "",
         formData: null,
-        token: ""
+        token: "",
     }
     componentDidMount() {
         const tok = sessionStorage.getItem("authToken")
@@ -64,9 +64,9 @@ export default class App extends React.Component {
 
         this.setState({ formData });
         this.form.reset();
-    };
+    }; 
     test = () => {
-        console.log(this.state.token)
+        
     }
     renderNamesOfPassenger = () => {
         let passArray = localStorage.getItem('nameData')
@@ -88,6 +88,25 @@ export default class App extends React.Component {
                     <p key={idx}>{seat}</p>
                 )
             })
+        }
+    }
+    getSumTotal = () => {
+        let count = 0
+        let tax = 150
+        let seatArray = localStorage.getItem('reservedSeats')
+        if (seatArray) {
+            let seaArr = JSON.parse(seatArray)
+            for (let i = 0; i < seaArr.length; i++) {
+                count++
+            }
+            return (
+                <div>
+                    <hr className="hr3" />
+                    <p>{1000 * count}</p>
+                    <p>+{tax}</p>
+                    <p>{(1000 * count) + tax}</p>
+                </div>
+            )
         }
     }
     render() {
@@ -157,17 +176,17 @@ export default class App extends React.Component {
                                     />
                                 </div>
                                 <input type="hidden" name="issuer" value={issuer} />
-                                <div className="actionButton">
+                                <div className="">
                                     <button onClick={this.test()} className="btn btn-light btCustom">PAY</button>
                                 </div>
                             </form>
-                            {formData && (
+                            {/* {formData && (
                                 <div className="App-highlight">
                                     {formatFormData(formData).map((d, i) => (
                                         <div key={i}>{d}</div>
                                     ))}
                                 </div>
-                            )}
+                            )} */}
                         </div>
                     </div>
                     <div className="columnTwo">
@@ -176,16 +195,37 @@ export default class App extends React.Component {
                             <p>BOOKING DETAILS</p>
                             <div className="row">
                                 <div className="col-6 pt">
-                                    <p>Username</p>
+                                    <p className="hdng">Username</p>
+                                    <hr className="hr3" />
+                                    <p className="hdng">Date</p>
+                                    <p className="hdng">From</p>
+                                    <p className="hdng">To</p>
+                                    <hr className="hr3" />
                                     <p className="hdng">Passengers</p>
                                     {this.renderNamesOfPassenger()}
+                                    <hr className="hr3" />
+                                    <p className="hdng">Ticket price</p>
+                                    <p className="hdng">Tax</p>
+                                    <p className="hdng">Toal Sum</p>
+
                                 </div>
                                 <div className="col-6">
                                     <p className="usrName">{token.name}</p>
+                                    <hr className="hr3" />
+                                    <p className="usrName">{localStorage.getItem("date")}</p>
+                                    <p className="usrName">{localStorage.getItem("start")}</p>
+                                    <p className="usrName">{localStorage.getItem("destination")}</p>
+                                    <hr className="hr3" />
                                     <p className="hdng">Seat No</p>
                                     {this.renderSeatNumbers()}
+                                    <p>{this.getSumTotal()}</p>
                                 </div>
-                                <hr />
+                                {/* <div>
+                                <hr className="hr1" />
+                                </div>
+                                <div>
+                                <hr className="hr2" />
+                                </div> */}
                             </div>
                         </div>
                     </div>
