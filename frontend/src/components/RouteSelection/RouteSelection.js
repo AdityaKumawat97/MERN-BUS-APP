@@ -2,12 +2,14 @@ import React from 'react'
 import RouteSelector from '../routeSelector/Routeselector'
 import SeatSelection from '../SeatSelection/SeatSelection'
 import PaymentTab from '../PaymentTab/PaymentTab'
-import TicketPage from '../TicketPage/TicketPage'
+
 export default function RouteSelection({ history }) {
+
     const handleUserIcon = e => {
         e.preventDefault()
         history.push('/profile')
     }
+
     const handleSignOut = e => {
         e.preventDefault()
         sessionStorage.removeItem('authToken')
@@ -16,10 +18,12 @@ export default function RouteSelection({ history }) {
         localStorage.clear()
         history.push('/')
     }
+
     const handleLogoClick = e => {
         e.preventDefault()
         history.push('/routes')
     }
+    
     return (
         <div className="container">
             <div>

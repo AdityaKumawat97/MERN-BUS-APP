@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { FaAngleDoubleDown } from "react-icons/fa";
 import './Tab.css'
 export default function SeatSelection() {
@@ -7,7 +7,7 @@ export default function SeatSelection() {
     const [gender, setGender] = useState([])
     const [reservedSeat, setReservedSeat] = useState(["1A", "2A", "2B", "3B", "4A", "5C", "6A", "7B", "7C", '8B', "9B", "9C"])
     const [seatNumber, setSeatnumber] = useState([])
-    const [passengers, setPassengers] = useState([])
+    // const [passengers, setPassengers] = useState([])
     // useEffect(()=>{
     //     let bId = localStorage.getItem('selectedBusId')
     //     if(bId){

@@ -11,20 +11,22 @@ export default function Homepage({ history }) {
             <div className="header-nav">
                 <span className="mytext1"> Unique Travels </span>
             </div>
+            
             <div className="">
             </div>
-            
+
             <div className="container">
                 <div className="slogan">
-                <h1>
-                    <span>always Travel</span>
-                    <div class="message">
-                        <div class="word1">Uniquely</div>
-                        <div class="word2">Safely</div>
-                        <div class="word3">with a smile</div>
-                    </div>
-                </h1>
-            </div>
+                    <h1>
+                        <span>always Travel</span>
+                        <div className="message">
+                            <div className="word1">Uniquely</div>
+                            <div className="word2">Safely</div>
+                            <div className="word3">with a smile</div>
+                        </div>
+                    </h1>
+                </div>
+
                 <a href="/#" onClick={e => enterSite(e)} className="mainBtn">
                     <svg width="277" height="62">
                         <defs>
@@ -38,8 +40,6 @@ export default function Homepage({ history }) {
                     <span >Get Started!</span>
                 </a>
             </div>
-
-
         </div>
     )
 }

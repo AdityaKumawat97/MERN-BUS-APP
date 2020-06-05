@@ -19,8 +19,8 @@ export default function TicketPage({ history }) {
         let to = localStorage.getItem("destination")
         return (
             <div>
-                <p>From: {from}</p>
-                <p>To:{to}</p>
+                <p>From:  {from}</p>
+                <p>To:  {to}</p>
             </div>
         )
     }
@@ -56,7 +56,7 @@ export default function TicketPage({ history }) {
     }
     const getDateValue = () => {
         let dat = localStorage.getItem("date")
-        return <p>On: {dat}</p>
+        return <p>On: {dat}, 10 AM (Hourly commute)</p>
     }
     return (
 
@@ -80,32 +80,32 @@ export default function TicketPage({ history }) {
                 </nav>
             </div>
             <div className="tpMain">
-                <article class="ticket">
-                    <header class="ticket__wrapper">
-                        <div class="ticket__header">
+                <article className="ticket">
+                    <header className="ticket__wrapper">
+                        <div className="ticket__header">
                             1 🎟 UNIQUE TRAVELS
                         </div>
                     </header>
-                    <div class="ticket__divider">
-                        <div class="ticket__notch"></div>
-                        <div class="ticket__notch ticket__notch--right"></div>
+                    <div className="ticket__divider">
+                        <div className="ticket__notch"></div>
+                        <div className="ticket__notch ticket__notch--right"></div>
                     </div>
-                    <div class="ticket__body">
-                        <section class="ticket__section">
+                    <div className="ticket__body">
+                        <section className="ticket__section">
                             {getLocationData()}
                             {getSeatNumbers()}
                             <p>Your seats are together <span>{getDateValue()}</span></p>
                         </section>
-                        <section class="ticket__section">
+                        <section className="ticket__section">
                             <h3>Passenger Names</h3>
                             {getPassengerName()}
                         </section>
-                        <section class="ticket__section">
+                        <section className="ticket__section">
                             <h3>Payment Method</h3>
                             <p>Credit Card</p>
                         </section>
                     </div>
-                    <footer class="ticket__footer">
+                    <footer className="ticket__footer">
                         <p>Transaction-ID</p>
                         {getIdNumber()}
                     </footer>

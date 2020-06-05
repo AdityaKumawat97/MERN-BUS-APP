@@ -32,11 +32,13 @@ export default function Routeselector() {
                 setData(data.bus)
             })
     }
+
     const handleDate = e => {
         e.preventDefault()
         //    console.log(e.target.value)
         localStorage.setItem("date", e.target.value)
     }
+    
     return (
         <div className="rdc">
             <div className="form-group inline"></div>

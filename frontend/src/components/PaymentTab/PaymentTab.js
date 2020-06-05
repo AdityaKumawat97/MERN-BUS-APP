@@ -2,16 +2,17 @@ import React from "react";
 import Card from "react-credit-cards";
 import './PaymentTab.css'
 import jwt_decode from 'jwt-decode'
+
 import {
     formatCreditCardNumber,
     formatCVC,
     formatExpirationDate,
     formatFormData
 } from "./utils";
-
 import "react-credit-cards/es/styles-compiled.css";
 
 export default class App extends React.Component {
+
     state = {
         number: "",
         name: "",
@@ -22,6 +23,7 @@ export default class App extends React.Component {
         formData: "",
         token: "",
     }
+
     componentDidMount() {
         const tok = sessionStorage.getItem("authToken")
         const decoded = jwt_decode(tok)
@@ -65,11 +67,13 @@ export default class App extends React.Component {
         this.setState({ formData });
         this.form.reset();
     };
-    test = (e) => {
+
+    moveToTicketPage = (e) => {
         e.preventDefault()
         localStorage.setItem("paymentData", JSON.stringify(this.state.token))
         window.location.href = "/getTicket"
     }
+
     renderNamesOfPassenger = () => {
         let passArray = localStorage.getItem('nameData')
         if (passArray) {
@@ -81,6 +85,7 @@ export default class App extends React.Component {
             })
         }
     }
+
     renderSeatNumbers = () => {
         let seatArray = localStorage.getItem('reservedSeats')
         if (seatArray) {
@@ -92,6 +97,7 @@ export default class App extends React.Component {
             })
         }
     }
+
     getSumTotal = () => {
         let count = 0
         let tax = 150
@@ -111,6 +117,7 @@ export default class App extends React.Component {
             )
         }
     }
+
     render() {
         const { name, number, expiry, cvc, focused, issuer, formData, token } = this.state;
 
@@ -118,6 +125,8 @@ export default class App extends React.Component {
 
             <div className="paym">
                 <div className="row">
+
+
                     <div key="Payment">
                         <div className="App-payment cl-1">
                             <p className="pPayment">Enter Credit card details</p>
@@ -179,18 +188,14 @@ export default class App extends React.Component {
                                 </div>
                                 <input type="hidden" name="issuer" value={issuer} />
                                 <div className="">
-                                    <button onClick={e => this.test(e)} className="btn btn-light btCustom">PAY</button>
+                                    <button onClick={e => this.moveToTicketPage(e)} className="btn btn-light btCustom">PAY</button>
                                 </div>
                             </form>
-                            {/* {formData && (
-                                <div className="App-highlight">
-                                    {formatFormData(formData).map((d, i) => (
-                                        <div key={i}>{d}</div>
-                                    ))}
-                                </div>
-                            )} */}
                         </div>
                     </div>
+
+
+
                     <div className="columnTwo">
                         <h3>Unique Travels</h3>
                         <div>
@@ -222,12 +227,6 @@ export default class App extends React.Component {
                                     {this.renderSeatNumbers()}
                                     <p>{this.getSumTotal()}</p>
                                 </div>
-                                {/* <div>
-                                <hr className="hr1" />
-                                </div>
-                                <div>
-                                <hr className="hr2" />
-                                </div> */}
                             </div>
                         </div>
                     </div>

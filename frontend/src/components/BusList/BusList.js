@@ -2,18 +2,25 @@ import React, { useState, useEffect } from 'react'
 import { FaAngleDoubleDown } from "react-icons/fa";
 import './busList.css'
 export default function BusList({ value: dataInp }) {
+
     const [obj, setObj] = useState('')
     const [reset, Setreset] = useState(false)
     const [arrowDown, setArrowDown] = useState(false)
     const [clas, SetClas] = useState(true)
+
+
     useEffect(() => {
         setObj(dataInp)
     }, [dataInp])
+
+
     const handleSubmit = bId => {
         localStorage.setItem("selectedBusId", bId)
         SetClas(false)
         setArrowDown(true)
     }
+
+
     const handleReset = (e) => {
         if (clas === false) {
             Setreset(true)
@@ -22,10 +29,11 @@ export default function BusList({ value: dataInp }) {
         }
         localStorage.removeItem("selectedBusId")
     }
+
+
     const renderFunction = () => {
-        // console.log(dataInp[0].companyName)
         return dataInp.map((bus, idx) => {
-            let bId = bus._id
+            // let bId = bus._id
             return (
                 <div key={idx} className="card mt-5 buslist">
                     <div class="row ml-3">
@@ -49,7 +57,6 @@ export default function BusList({ value: dataInp }) {
                         </div>
                     </div>
                 </div >
-
             )
         })
 

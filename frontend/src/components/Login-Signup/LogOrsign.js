@@ -18,7 +18,7 @@ export default function LogOrsign({ history }) {
 
     const submitData = e => {
         e.preventDefault()
-        console.log(userData)
+        // console.log(userData)
         logFunc.logUserIn(userData)
             .then(response => response.data)
             .then(data => {

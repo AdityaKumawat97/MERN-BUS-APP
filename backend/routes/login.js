@@ -27,8 +27,8 @@ router.post('/login', async (req, res, next) => {
 });
 
 
-router.get('/Login', (req, res) => {
-    res.send("Login Here")
-})
+// router.get('/Login', (req, res) => {
+//     res.send("Login Here")
+// })
 
 module.exports = router;
