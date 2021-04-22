@@ -240,5 +240,16 @@
         "availableSeats": "20",
         "pricePerSeat": "1000",
         "date": "22/08/2020"
+    },
+    {
+        "CompanyName": "Santhosh Travels bus",
+        "busType": "Multi AXLE AC",
+        "busNumber": "AP 27 110099",
+        "startCity": "Kakinada",
+        "destination": "",
+        "totalSeats": "36",
+        "availableSeats": "20",
+        "pricePerSeat": "1000",
+        "date": "22/04/2021"
     }
 ]
